@@ -1,0 +1,99 @@
+body {
+	background-color: #FFFADB; 
+	margin: 0;
+}
+
+/*.container {
+	margin: 0 auto;
+	background-color: #FFFADB;
+}*/
+/*
+div.container {
+	padding-top: 20px;
+}*/
+
+h3 {
+	font-family: 'Londrina Shadow', cursive;
+	font-size: 32px;
+	color: #56585E;
+	margin: 0;
+	padding-top: 30px;
+}
+
+h3:hover { 
+	-webkit-transform: scale(1.1);
+}
+
+h4 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	color: #56585E;
+	text-align: center;
+	font-size: 24px;
+}
+
+ul, p {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	color: #56585E;
+}
+
+p, .list {
+	font-size: 20px;
+}
+
+li {
+	list-style-type: none;
+	display: inline;
+	color: #56585E;
+}
+
+#beginning, #me, #myskills, #info, #proof {
+	height: 500px;
+}
+
+#myskills, #proof {
+	background-color: #D2F7F7;
+}
+
+div#beginning {
+	text-align: center;
+	background-color: #D2F7F7;
+}
+
+div, div#me {
+	padding-top: 50px;
+	text-align: center;
+}
+
+img {
+	width: 200px;
+/*	padding-left: 40px;*/
+	border-radius: 100px;
+}
+
+img:hover { 
+	-webkit-transform: scale(1.1);
+} 
+
+.button {
+  padding:5px;
+  margin-right: 15px;
+  background-color: #ffffff;
+  border: 1px solid #a6a6a6;
+  border-radius: 5px;
+  color:#000;
+  text-decoration:none;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color: #A5AAB8;;
+}
+
+.button:hover { 
+	-webkit-transform: scale(1.1);
+}
+
+ul li {
+	text-align: center;
+	padding: 10px;
+}

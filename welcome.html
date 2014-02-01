@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Meet Julie</title>
+    <meta name="About Julie Bouck">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+      $(document).ready(function() {
+        $("#about-me").click(function() {
+          $('html, body').animate({
+            scrollTop: $("#me").offset().top
+          }, 1000);
+        });
+        $("#skills").click(function() {
+          $('html, body').animate({
+            scrollTop: $("#myskills").offset().top
+          }, 1500);
+        });
+        $("#portfolio").click(function() {
+          $('html, body').animate({
+            scrollTop: $("#proof").offset().top
+          }, 2500);
+        });
+        $("#contact-me").click(function() {
+          $('html, body').animate({
+            scrollTop: $("#info").offset().top
+          }, 2000);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+
+      <div id="beginning">
+        <h3>Hello, I'm Julie.<img src="/Users/juliepranger/Documents/images/photo (1).JPG" alt="Julie"></h3>
+
+
+        <ul>
+          <button class="button" id="about-me"><li>About Me</li></button>
+          <button class="button" id="skills"><li>Skills</li>
+          <button class="button" id="portfolio"><li>Portfolio</li>
+          <button class="button" id="contact-me"><li>Contact Me</li>
+        </ul>
+      </div>
+
+      <div id="me">
+        <h4>About Me</h4>
+
+        <p>Hello, and thanks for stopping by! I am a Colorado native and have spent the last two years in Los Angeles and, most recently, Santa Monica. </p>
+
+        <p>I was drawn to coding's creative element, and I love to making beautiful websites for talented people to showcase their amazing ideas. </p>
+
+        <p>If I am not working, you will find me exercising, cooking and/or baking, reading, blogging, or watching Doctor Who and/or BBC miniseries. </p>
+      </div>
+
+      <div id="myskills">
+        <h4>Skills</h4>
+
+        <ul>
+          <li>HTML5, CSS3</li>
+          <li>jQuery, JavaScript</li>
+          <li>Ruby on Rails</li>
+          <li>WordPress</li>
+        </ul>
+      </div>
+
+      <div id="info">
+        <h4>Contact Me</h4>
+
+        <ul>
+          <li class="list"><strong>Twitter:</strong> @juliepranger</li>
+          <li class="list"><strong>E-mail:</strong> juliepranger@gmail.com</li>
+          <li class="list"><strong>Instagram: </strong>@juliebouck</li>
+          <li class="list"><strong>Blog: </strong>http://www.thejulesrules.com</li>
+        </ul>
+      </div>
+
+      <div id="proof">  
+        <h4>Portfolio</h4>
+      </div>
+
+  </body>
+</html>
