@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app lang="en">
   <head>
     <meta charset="utf-8">
 
     <title>Meet Julie</title>
     <meta name="About Julie Bouck">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="onepage-scroll/jquery.onepage-scroll.js"></script>
+    <script src="bower/components/jquery.stellar/jquery.stellar.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="onepage-scroll/onepage-scroll.css">
     <link href='http://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 
@@ -14,80 +17,112 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script>
-      $(document).ready(function() {
-        $("#about-me").click(function() {
-          $('html, body').animate({
-            scrollTop: $("#me").offset().top
-          }, 1000);
-        });
-        $("#skills").click(function() {
-          $('html, body').animate({
-            scrollTop: $("#myskills").offset().top
-          }, 1500);
-        });
-        $("#portfolio").click(function() {
-          $('html, body').animate({
-            scrollTop: $("#proof").offset().top
-          }, 2500);
-        });
-        $("#contact-me").click(function() {
-          $('html, body').animate({
-            scrollTop: $("#info").offset().top
-          }, 2000);
-        });
+      // $(document).ready(function() {
+      //   $("#about-me").click(function() {
+      //     $('html, body').animate({
+      //       scrollTop: $("#me").offset().top
+      //     }, 1000);
+      //   });
+      //   $("#skills").click(function() {
+      //     $('html, body').animate({
+      //       scrollTop: $("#myskills").offset().top
+      //     }, 1500);
+      //   });
+      //   $("#portfolio").click(function() {
+      //     $('html, body').animate({
+      //       scrollTop: $("#proof").offset().top
+      //     }, 2500);
+      //   });
+      //   $("#contact-me").click(function() {
+      //     $('html, body').animate({
+      //       scrollTop: $("#info").offset().top
+      //     }, 2000);
+      //   });
+      // });
+    
+    $(document).ready(function() {
+      $(".main").onepage_scroll({
+         sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+         easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
+                                          // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+         animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+         pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+         updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+         beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+         afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+         loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+         keyboard: true,                  // You can activate the keyboard controls
+         responsiveFallback: false        // You can fallback to normal page scroll by defining the width of the browser in which
+                                          // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
+                                          // the browser's width is less than 600, the fallback will kick in.
       });
+      $('#backgroundimage').stellar();
+    });
     </script>
   </head>
 
   <body>
+    <div class="main">
 
-      <div id="beginning">
-        <h3>Hello, I'm Julie.<img src="/Users/juliepranger/Documents/images/photo (1).JPG" alt="Julie"></h3>
+      <section>
+        <div id="beginning">
+          <div id="backgroundimage" data-stellar-background-ratio="0.5">
+            <h3>Hello, I'm Julie.<img src="/Users/juliepranger/Documents/images/photo (1).JPG" alt="Julie"></h3>
+          </div>
 
+ <!--          <ul>
+            <button class="button" id="about-me"><li>About Me</li></button>
+            <button class="button" id="skills"><li>Skills</li>
+            <button class="button" id="portfolio"><li>Portfolio</li>
+            <button class="button" id="contact-me"><li>Contact Me</li>
+          </ul> -->
+        </div>
+      </section>
 
-        <ul>
-          <button class="button" id="about-me"><li>About Me</li></button>
-          <button class="button" id="skills"><li>Skills</li>
-          <button class="button" id="portfolio"><li>Portfolio</li>
-          <button class="button" id="contact-me"><li>Contact Me</li>
-        </ul>
-      </div>
+      <section>
+        <div id="me">
+          <h4>About Me</h4>
 
-      <div id="me">
-        <h4>About Me</h4>
+          <p>Hello, and thanks for stopping by! I am a Colorado native and have spent the last two years in Los Angeles and, most recently, Santa Monica. </p>
 
-        <p>Hello, and thanks for stopping by! I am a Colorado native and have spent the last two years in Los Angeles and, most recently, Santa Monica. </p>
+          <p>I was drawn to coding's creative element, and I love to making beautiful websites for talented people to showcase their amazing ideas. </p>
 
-        <p>I was drawn to coding's creative element, and I love to making beautiful websites for talented people to showcase their amazing ideas. </p>
+          <p>If I am not working, you will find me exercising, cooking and/or baking, reading, blogging, or watching Doctor Who and/or BBC miniseries. </p>
+        </div>
+      </section>
 
-        <p>If I am not working, you will find me exercising, cooking and/or baking, reading, blogging, or watching Doctor Who and/or BBC miniseries. </p>
-      </div>
+      <section>
+        <div id="myskills">
+          <h4>Skills</h4>
 
-      <div id="myskills">
-        <h4>Skills</h4>
+          <ul>
+            <li>HTML5, CSS3</li>
+            <li>jQuery, JavaScript</li>
+            <li>Ruby on Rails</li>
+            <li>WordPress</li>
+          </ul>
+        </div>
+      </section>
 
-        <ul>
-          <li>HTML5, CSS3</li>
-          <li>jQuery, JavaScript</li>
-          <li>Ruby on Rails</li>
-          <li>WordPress</li>
-        </ul>
-      </div>
+      <section>
+        <div id="info">
+          <h4>Contact Me</h4>
 
-      <div id="info">
-        <h4>Contact Me</h4>
+          <ul>
+            <li class="list"><strong>Twitter:</strong> @juliepranger</li>
+            <li class="list"><strong>E-mail:</strong> juliepranger@gmail.com</li>
+            <li class="list"><strong>Instagram: </strong>@juliebouck</li>
+            <li class="list"><strong>Blog: </strong>http://www.thejulesrules.com</li>
+          </ul>
+        </div>
+      </section>
 
-        <ul>
-          <li class="list"><strong>Twitter:</strong> @juliepranger</li>
-          <li class="list"><strong>E-mail:</strong> juliepranger@gmail.com</li>
-          <li class="list"><strong>Instagram: </strong>@juliebouck</li>
-          <li class="list"><strong>Blog: </strong>http://www.thejulesrules.com</li>
-        </ul>
-      </div>
+      <section>
+        <div id="proof">  
+          <h4>Portfolio</h4>
+        </div>
+      </section>
 
-      <div id="proof">  
-        <h4>Portfolio</h4>
-      </div>
-
+    </div>  
   </body>
 </html>
