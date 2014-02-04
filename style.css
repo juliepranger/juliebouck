@@ -23,7 +23,7 @@ h3 {
 	font-family: 'Zeyada', cursive;
 	font-size: 48px;
 	margin: 0;
-	padding-top: 30px;
+	padding: 100px 0 100px 0;
 }
 
 h3:hover { 
@@ -38,9 +38,10 @@ h4 {
 	font-weight: 700;
 	text-align: center;
 	font-size: 24px;
+	padding: 100px 0 30px 0;
 }
 
-h3, p, li {
+h3 li {
 	color: #56585E;
 }
 
@@ -48,7 +49,7 @@ ul, p {
 	font-weight: 300;
 }
 
-p, .list {
+p, li, .list {
 	font-size: 20px;
 }
 
@@ -61,29 +62,44 @@ a {
 	text-decoration: none;
 	color: #FCFCFC;
 }
-/*#beginning, #me, #myskills, #info, #proof {
-	height: 500px;
-}*/
 
-/*#myskills, #proof {
-	background-color: #D2F7F7;
-}*/
+#proof {
+	width: 960px;
+}
 
-.hotpink, .lightfont#info, li.list {
+.hotpink, .lightfont#info, li.list, footer {
 	background-color: #FF479A;
 	color: #FCFCFC;
 }
 
+.lightpink, .darkfont {
+	color: #56585E;
+	background-color: #FACAE0;
+} 
+
 div, div#beginning, div#me {
 	text-align: center;
+	margin: auto;
 /*	background-color: #D2F7F7;*/
 }
 
 img {
 	width: 200px;
+	height: 200px;
 /*	padding-left: 40px;*/
 	border-radius: 100px;
-	margin-top: 30px;
+	box-shadow: 3px 3px 3px #56585E;
+}
+
+.float-left {
+	float: left;
+	margin: auto;
+}
+
+img#left-margin {
+	margin-left: 60px;
+	margin-right: 60px;
+	margin-top: 15px;
 }
 
 img:hover { 
@@ -110,4 +126,8 @@ img:hover {
 ul li {
 	text-align: center;
 	padding: 10px;
+}
+
+ul {
+	padding-right: 40px;
 }
