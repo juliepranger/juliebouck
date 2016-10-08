@@ -1,5 +1,21 @@
 @import 'https://fonts.googleapis.com/css?family=Antic+Didone';
 
+// vendor prefixes
+@mixin prefix($property, $values) {
+  -webkit-#{$property}: #{$values};
+     -moz-#{$property}: #{$values};
+      -ms-#{$property}: #{$values};
+       -o-#{$property}: #{$values};
+          #{$property}: #{$values};
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -34,4 +50,66 @@ h1 {
 	display: inline-block;
 	vertical-align: top;
 	margin-top: 50px;
+}
+
+ul {
+	float: right;
+	margin-top: 46px;
+}
+
+ul li {
+	display: inline-block;
+	list-style-type: none;
+	margin: 20px;
+	position: relative;
+	vertical-align: top;
+}
+
+ul li a:before {
+	content: '';
+	background-color: #fff;
+	height: 2px;
+	width: 100%;
+	right: 0;
+	bottom: -2px;
+	position: absolute;
+	z-index: 1;
+	@include prefix(transition, all 250ms ease-in-out);
+}
+
+ul li a {
+	color: #000;
+	padding-bottom: 4px;
+	position: relative;
+	text-decoration: none;
+	border-bottom: 1px dashed black;
+}
+
+ul li a:visited,
+ul li a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+ul li a:hover {
+
+	&:before {
+		width: 0%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	ul {
+		clear: both;
+		display: block;
+		float: none;
+		margin: 20px 0;
+	}
+
+	ul li {
+		display: block;
+		margin: 30px 20px;
+		width: 100%;
+	}
 }
