@@ -16,6 +16,35 @@
     transition:         $transition;
 }
 
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(wobble) {
+    0%   {
+          @include prefix(transform, rotate(-10deg));
+      }
+    20%  {transform: rotate(10deg);}
+    40%  {transform: rotate(-10deg);}
+    60%  {transform: rotate(10deg);}
+    80%  {transform: rotate(-10deg);}
+    100% {
+    @include prefix(transform, rotate(10deg));
+    }
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -98,6 +127,40 @@ ul li a:hover {
 	}
 }
 
+.surprise {
+	font-size: 14px;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: 30px;
+	width: 30px;
+	@include prefix(transition, all 1000ms ease-in-out );
+
+	&:hover {
+		cursor: pointer;
+		font-size: 18px;
+		@include prefix(animation, wobble 4.5s ease-in-out 0s 5 alternate forwards);
+		@include prefix(animation-fill-mode, forwards);
+	}
+}
+
+.surprise a {
+	color: #000;
+	text-decoration: none;
+}
+
+.corg-party {
+	background-image: url('../images/corgiswimflipflip.gif');
+	background-repeat: repeat;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+
+.corg-party h1 {
+	display: block;
+	text-align: center;
+}
 @media screen and (max-width: 767px) {
 
 	ul {
